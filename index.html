@@ -1,330 +1,712 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MRVICTORIA</title>
+        <meta property="og:title" content="Michael Roevie Victoria" />
+        <meta property="og:type" content="portfolio" />
+        <meta property="og:url" content="https://michaelroevievictoria.github.io/" />
+        <meta property="og:image" content="images/social-images-meta.jpg" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MRVICTORIA</title>
-  <meta property="og:title" content="Michael Roevie Victoria" />
-  <meta property="og:type" content="portfolio" />
-  <meta property="og:url" content="https://michaelroevievictoria.github.io/" />
-  <meta property="og:image" content="images/social-images-meta.jpg" />
+        <meta
+            property="og:description"
+            content="I'm a Web, Mobile Developer and also passionate Photographer from Cavite, Philippines. I aim to make a difference
+            through my creative solution."
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+            rel="stylesheet"
+        />
+        <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+            rel="stylesheet"
+        />
+        <link href="css/aos.css" rel="stylesheet" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
+    </head>
 
-  <meta property="og:description" content="I'm a Web, Mobile Developer and also passionate Photographer from Cavite, Philippines. I aim to make a difference
-            through my creative solution." />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/aos.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/main.css" rel="stylesheet">
-</head>
-
-<body id="top">
-  <header>
-    <div class="profile-page sidebar-collapse">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-        <div class="container">
-          <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">MRVICTORIA</a>
-            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-              aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span
-                class="navbar-toggler-bar bar3"></span></button>
-          </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <div class="page-content">
-    <div>
-      <div class="profile-page">
-        <div class="wrapper">
-          <div class="page-header page-header-small" filter-color="purple">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('images/BG.jpeg');">
+    <body id="top">
+        <header>
+            <div class="profile-page sidebar-collapse">
+                <nav
+                    class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary"
+                    color-on-scroll="400"
+                >
+                    <div class="container">
+                        <div class="navbar-translate">
+                            <a class="navbar-brand" href="#" rel="tooltip">MRVICTORIA</a>
+                            <button
+                                class="navbar-toggler navbar-toggler"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#navigation"
+                                aria-controls="navigation"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                            >
+                                <span class="navbar-toggler-bar bar1"></span
+                                ><span class="navbar-toggler-bar bar2"></span
+                                ><span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link smooth-scroll" href="#about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link smooth-scroll" href="#skill">Skills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link smooth-scroll" href="#portfolio"
+                                        >Portfolio</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link smooth-scroll" href="#experience"
+                                        >Experience</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link smooth-scroll" href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-            <div class="container">
-              <div class="content-center">
-                <div class="cc-profile-image"><a href="#"><img src="images/michael.jpg" alt="Image" /></a></div>
-                <div class="h2 title">Michael Roevie Victoria</div>
-                <p class="category text-white">Web Developer | Mobile Developer | Photographer</p><a
-                  class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in"
-                  data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary"
-                  href="images/Michael-Roevie-Victoria-CV.pdf"
-                  data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
-              </div>
-            </div>
-            <div class="section">
-              <div class="container">
-                <div class="button-container">
-                  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/localhost8001"
-                    rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a>
-                  <!-- <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a> -->
-                  <!-- <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a> -->
-                  <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/mikee.victoria"
-                    rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a>
+        </header>
+        <div class="page-content">
+            <div>
+                <div class="profile-page">
+                    <div class="wrapper">
+                        <div class="page-header page-header-small" filter-color="purple">
+                            <div
+                                class="page-header-image"
+                                data-parallax="true"
+                                style="background-image: url('images/BG.jpeg')"
+                            ></div>
+                            <div class="container">
+                                <div class="content-center">
+                                    <div class="cc-profile-image">
+                                        <a href="#"><img src="images/michael.jpg" alt="Image" /></a>
+                                    </div>
+                                    <div class="h2 title">Michael Roevie Victoria</div>
+                                    <p class="category text-white">
+                                        Web Developer | Mobile Developer | Photographer
+                                    </p>
+                                    <a
+                                        class="btn btn-primary smooth-scroll mr-2"
+                                        href="#contact"
+                                        data-aos="zoom-in"
+                                        data-aos-anchor="data-aos-anchor"
+                                        >Hire Me</a
+                                    ><a
+                                        class="btn btn-primary"
+                                        href="images/Michael-Roevie-Victoria-CV.pdf"
+                                        data-aos="zoom-in"
+                                        data-aos-anchor="data-aos-anchor"
+                                        >Download CV</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="section">
+                                <div class="container">
+                                    <div class="button-container">
+                                        <a
+                                            class="btn btn-default btn-round btn-lg btn-icon"
+                                            href="https://www.facebook.com/localhost8001"
+                                            rel="tooltip"
+                                            title="Follow me on Facebook"
+                                            ><i class="fa fa-facebook"></i
+                                        ></a>
+                                        <!-- <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a> -->
+                                        <!-- <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a> -->
+                                        <a
+                                            class="btn btn-default btn-round btn-lg btn-icon"
+                                            href="https://www.instagram.com/mikee.victoria"
+                                            rel="tooltip"
+                                            title="Follow me on Instagram"
+                                            ><i class="fa fa-instagram"></i
+                                        ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="about">
-        <div class="container">
-          <div class="card" data-aos="fade-up" data-aos-offset="10">
-            <div class="row">
-              <div class="col-lg-6 col-md-12">
-                <div class="card-body">
-                  <div class="h4 mt-0 title">Abouååt</div>
-                  <p>I'm a Web, Mobile Developer and also passionate Photographer from Cavite, Philippines. I aim to
-                    make a difference
-                    through my creative solution.</p>
-                  <p>Worked with project teams to create user-friendly and appealing application interfaces and mobile
-                    app/websites for users. Met with
-                    project manager, business analyst and architect right from beginning of project, creating rough
-                    mock-ups that were
-                    refined and extended over many iterations. Adjustments to mock-ups as necessary to address problems
-                    encountered.
-                    <a href="#" target="_blank">Learn More</a></p>
+                <div class="section" id="about">
+                    <div class="container">
+                        <div class="card" data-aos="fade-up" data-aos-offset="10">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="card-body">
+                                        <div class="h4 mt-0 title">About</div>
+                                        <p>
+                                            I'm a Web, Mobile Developer and also passionate
+                                            Photographer from Cavite, Philippines. I aim to make a
+                                            difference through my creative solution.
+                                        </p>
+                                        <p>
+                                            Worked with project teams to create user-friendly and
+                                            appealing application interfaces and mobile app/websites
+                                            for users. Met with project manager, business analyst
+                                            and architect right from beginning of project, creating
+                                            rough mock-ups that were refined and extended over many
+                                            iterations. Adjustments to mock-ups as necessary to
+                                            address problems encountered.
+                                            <a href="#" target="_blank">Learn More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="card-body">
+                                        <div class="h4 mt-0 title">Basic Information</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <strong class="text-uppercase">Age:</strong>
+                                            </div>
+                                            <div class="col-sm-8">29</div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-sm-4">
+                                                <strong class="text-uppercase">Email:</strong>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                michaelroevie.victoria@gmail.com
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-sm-4">
+                                                <strong class="text-uppercase">Phone:</strong>
+                                            </div>
+                                            <div class="col-sm-8">+639-16247-6596</div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-sm-4">
+                                                <strong class="text-uppercase">Address:</strong>
+                                            </div>
+                                            <div class="col-sm-8">Imus Cavite, Philippines</div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-sm-4">
+                                                <strong class="text-uppercase">Language:</strong>
+                                            </div>
+                                            <div class="col-sm-8">Filipino, English</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div class="card-body">
-                  <div class="h4 mt-0 title">Basic Information</div>
-                  <div class="row">
-                    <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-                    <div class="col-sm-8">26</div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-                    <div class="col-sm-8">michaelroevie.victoria@gmail.com</div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-                    <div class="col-sm-8">+639-35817-8934</div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-                    <div class="col-sm-8">Imus Cavite, Philippines</div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-                    <div class="col-sm-8">Filipino, English</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="skill">
-        <div class="container">
-          <div class="h4 text-center mb-4 title">Professional Skills</div>
-          <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <div class="card-body">
+                <div class="section" id="skill">
+                    <div class="container">
+                        <div class="h4 text-center mb-4 title">Professional Skills</div>
+                        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">HTML5</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 80%"
+                                                ></div>
+                                                <span class="progress-value">80%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">CSS3</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 80%"
+                                                ></div>
+                                                <span class="progress-value">80%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">HTML5</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">CSS3</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">JavaScript React</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 90%"
+                                                ></div>
+                                                <span class="progress-value">90%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge"
+                                                >JavaScript React Native</span
+                                            >
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 85%"
+                                                ></div>
+                                                <span class="progress-value">85%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">JavaScript React</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 90%;"></div><span class="progress-value">90%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">JavaScript React
-                      Native</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">SEO</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 85%"
+                                                ></div>
+                                                <span class="progress-value">85%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">SASS</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 75%"
+                                                ></div>
+                                                <span class="progress-value">75 %</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">SEO</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">SASS</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">75 %</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">Wordpress</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 85%"
+                                                ></div>
+                                                <span class="progress-value">85%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge">Photoshop</span>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 80%"
+                                                ></div>
+                                                <span class="progress-value">80%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">Wordpress</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="progress-container progress-primary">
+                                            <span class="progress-badge"
+                                                >Amazon Web Services (AWS)</span
+                                            >
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    data-aos="progress-full"
+                                                    data-aos-offset="10"
+                                                    data-aos-duration="2000"
+                                                    role="progressbar"
+                                                    aria-valuenow="60"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 85%"
+                                                ></div>
+                                                <span class="progress-value">85%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">Photoshop</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="progress-container progress-primary"><span class="progress-badge">Amazon Web Services
-                      (AWS)</span>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                        data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="portfolio">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="h4 text-center mb-4 title">Portfolio</div>
-              <div class="nav-align-center">
-                <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development"
-                      role="tablist"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
-                  <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i
+                <div class="section" id="portfolio">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <div class="h4 text-center mb-4 title">Portfolio</div>
+                                <div class="nav-align-center">
+                                    <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link active"
+                                                data-toggle="tab"
+                                                href="#web-development"
+                                                role="tablist"
+                                                ><i class="fa fa-laptop" aria-hidden="true"></i
+                                            ></a>
+                                        </li>
+                                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i
                         class="fa fa-picture-o" aria-hidden="true"></i></a></li> -->
-                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Photography" role="tablist"><i
-                        class="fa fa-camera" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content gallery mt-5">
-            <div class="tab-pane active" id="web-development">
-              <div class="ml-auto mr-auto">
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                data-toggle="tab"
+                                                href="#Photography"
+                                                role="tablist"
+                                                ><i class="fa fa-camera" aria-hidden="true"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content gallery mt-5">
+                            <div class="tab-pane active" id="web-development">
+                                <div class="ml-auto mr-auto">
+                                    <div class="row">
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="https://play.google.com/store/apps/details?id=com.xtendly.prosperna2&hl=en">
-                        <figure class="cc-effect"><img src="images/prosperna_android.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Prosperna Android</div>
-                            <p>Mobile Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#">
-                        <figure class="cc-effect"><img src="images/prosperna_ios.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Prosperna iOS (Very Soon)</div>
-                            <p>Mobile Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
+                                      <div class="col-md-12">
+                                        <div
+                                            class="cc-porfolio-image img-raised"
+                                            data-aos="fade-up"
+                                            data-aos-anchor-placement="top-bottom"
+                                        >
+                                            <a
+                                                href="#"
+                                            >
+                                                <figure class="cc-effect">
+                                                    <img
+                                                        src="images/mychat-store.png"
+                                                        alt="Image"
+                                                    />
+                                                    <figcaption>
+                                                        <div class="h4">myChat - web - store NEXT JS</div>
+                                                        <p>Web Development - Sample View</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div
+                                            class="cc-porfolio-image img-raised"
+                                            data-aos="fade-up"
+                                            data-aos-anchor-placement="top-bottom"
+                                        >
+                                            <a
+                                                href="https://mychat.prosperna.com/login"
+                                            >
+                                                <figure class="cc-effect">
+                                                    <img
+                                                        src="images/mychat-web.png"
+                                                        alt="Image"
+                                                    />
+                                                    <figcaption>
+                                                        <div class="h4">myChat - Web</div>
+                                                        <p>Web Development</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                      </div>
 
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="http://hiveonthedot.com/goldwyn">
-                        <figure class="cc-effect"><img src="images/Goldwyn.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Goldwyn</div>
-                            <p>Web Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
+                                      <div class="col-md-6">
+                                        <div
+                                            class="cc-porfolio-image img-raised"
+                                            data-aos="fade-up"
+                                            data-aos-anchor-placement="top-bottom"
+                                        >
+                                            <a
+                                                href="https://apps.apple.com/ph/app/mychat-prosperna/id1591033406"
+                                            >
+                                                <figure class="cc-effect">
+                                                    <img
+                                                        src="images/mychat-ios.png"
+                                                        alt="Image"
+                                                    />
+                                                    <figcaption>
+                                                        <div class="h4">myChat- ios</div>
+                                                        <p>Mobile Development</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        </div>
+                                      <div class="col-md-6">
+                                        <div
+                                            class="cc-porfolio-image img-raised"
+                                            data-aos="fade-up"
+                                            data-aos-anchor-placement="top-bottom"
+                                        >
+                                            <a
+                                                href="https://play.google.com/store/apps/details?id=com.prosperna.mychat"
+                                            >
+                                                <figure class="cc-effect">
+                                                    <img
+                                                        src="images/mychat-android.png"
+                                                        alt="Image"
+                                                    />
+                                                    <figcaption>
+                                                        <div class="h4">myChat- android</div>
+                                                        <p>Mobile Development</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-6">
+                                        <div
+                                            class="cc-porfolio-image img-raised"
+                                            data-aos="fade-up"
+                                            data-aos-anchor-placement="top-bottom"
+                                        >
+                                            <a
+                                                href="https://apps.apple.com/us/app/pay-gpwa/id1593835535"
+                                            >
+                                                <figure class="cc-effect">
+                                                    <img
+                                                        src="images/PayGPWA-ios.png"
+                                                        alt="Image"
+                                                    />
+                                                    <figcaption>
+                                                        <div class="h4">PayGPWA- ios</div>
+                                                        <p>Mobile Development</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a
+                                                    href="https://play.google.com/store/apps/details?id=com.xtendly.paygpwa&hl=en_NZ"
+                                                >
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/PayGPWA-android.png"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">PayGPWA- Android</div>
+                                                            <p>Mobile Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a
+                                                    href="https://play.google.com/store/apps/details?id=com.prosperna.boss&hl=en_NZ"
+                                                >
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/Prosperna-Boss-App.png"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Prosperna BOSS</div>
+                                                            <p>Mobile Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a
+                                                    href="https://play.google.com/store/apps/details?id=com.xtendly.prosperna2&hl=en"
+                                                >
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/prosperna_android.png"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Prosperna Android</div>
+                                                            <p>Mobile Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#">
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/prosperna_ios.png"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Prosperna iOS</div>
+                                                            <p>Mobile Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="http://hiveonthedot.com/goldwyn">
+                                                    <figure class="cc-effect">
+                                                        <img src="images/Goldwyn.png" alt="Image" />
+                                                        <figcaption>
+                                                            <div class="h4">Goldwyn</div>
+                                                            <p>Web Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
 
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="http://empiredesigns.ph">
-                        <figure class="cc-effect"><img src="images/Empire.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Empire</div>
-                            <p>Web Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="https://vernverniece.com">
-                        <figure class="cc-effect"><img src="images/v<3V.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">A Blog of Vern and Verniece Enciso</div>
-                            <p>Web Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#web-development">
-                        <figure class="cc-effect"><img src="images/apoview.png" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Apo View Hotel</div>
-                            <p>Web Development</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="http://empiredesigns.ph">
+                                                    <figure class="cc-effect">
+                                                        <img src="images/Empire.png" alt="Image" />
+                                                        <figcaption>
+                                                            <div class="h4">Empire</div>
+                                                            <p>Web Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="https://vernverniece.com">
+                                                    <figure class="cc-effect">
+                                                        <img src="images/v<3V.png" alt="Image" />
+                                                        <figcaption>
+                                                            <div class="h4">
+                                                                A Blog of Vern and Verniece Enciso
+                                                            </div>
+                                                            <p>Web Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#web-development">
+                                                    <figure class="cc-effect">
+                                                        <img src="images/apoview.png" alt="Image" />
+                                                        <figcaption>
+                                                            <div class="h4">Apo View Hotel</div>
+                                                            <p>Web Development</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- <div class="tab-pane" id="graphic-design" role="tabpanel">
+                            <!-- <div class="tab-pane" id="graphic-design" role="tabpanel">
               <div class="ml-auto mr-auto">
                 <div class="row">
                   <div class="col-md-6">
@@ -370,146 +752,275 @@
                 </div>
               </div>   </div> -->
 
-            <div class="tab-pane" id="Photography" role="tabpanel">
-              <div class="ml-auto mr-auto">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#Photography">
-                        <figure class="cc-effect"><img src="images/photography-1.jpg" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Photoshoot</div>
-                            <p>Photography</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#Photography">
-                        <figure class="cc-effect"><img src="images/photography-3.jpg" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Wedding Photoshoot</div>
-                            <p>Photography</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#Photography">
-                        <figure class="cc-effect"><img src="images/photography-2.jpg" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Beach Photoshoot</div>
-                            <p>Photography</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <a href="#Photography">
-                        <figure class="cc-effect"><img src="images/photography-4.jpg" alt="Image" />
-                          <figcaption>
-                            <div class="h4">Nature Photoshoot</div>
-                            <p>Photography</p>
-                          </figcaption>
-                        </figure>
-                      </a></div>
-                  </div>
+                            <div class="tab-pane" id="Photography" role="tabpanel">
+                                <div class="ml-auto mr-auto">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#Photography">
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/photography-1.jpg"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Photoshoot</div>
+                                                            <p>Photography</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#Photography">
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/photography-3.jpg"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Wedding Photoshoot</div>
+                                                            <p>Photography</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#Photography">
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/photography-2.jpg"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Beach Photoshoot</div>
+                                                            <p>Photography</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                            <div
+                                                class="cc-porfolio-image img-raised"
+                                                data-aos="fade-up"
+                                                data-aos-anchor-placement="top-bottom"
+                                            >
+                                                <a href="#Photography">
+                                                    <figure class="cc-effect">
+                                                        <img
+                                                            src="images/photography-4.jpg"
+                                                            alt="Image"
+                                                        />
+                                                        <figcaption>
+                                                            <div class="h4">Nature Photoshoot</div>
+                                                            <p>Photography</p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="experience">
-        <div class="container cc-experience">
-          <div class="h4 text-center mb-4 title">Work Experience</div>
+                <div class="section" id="experience">
+                    <div class="container cc-experience">
+                        <div class="h4 text-center mb-4 title">Work Experience</div>
 
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-experience-header">
-                  <p>November 2018 - Present</p>
-                  <div class="h5">Xtendly Philippines Inc. / Prosperna</div>
-                </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Sr. React Native Developer</div>
-                  <p>*Create an Android and IOS application applicable in all devices.</p>
-                  <p>*Lead with a Team (Juniors) what New and also vice versa learning.</p>
-                  <p>*Create a project architecture (boilerplate/ template/ stater) in react native using Redux and
-                    Expo.</p>
+                        <div class="card">
+                            <div class="row">
+                                <div
+                                    class="col-md-3 bg-primary"
+                                    data-aos="fade-right"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body cc-experience-header">
+                                        <p>November 2018 - Present</p>
+                                        <div class="h5">
+                                            Xtendly Philippines Inc. / Prosperna Inc.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-9"
+                                    data-aos="fade-left"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body">
+                                        <div class="h5">Sr. React Native Developer</div>
 
-                </div>
-              </div>
-            </div>
-          </div>
+                                        <p>
+                                            *Develop an Android and IOS application applicable in
+                                            all devices.
+                                        </p>
 
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-experience-header">
-                  <p>February 2017 - Octorber 2018</p>
-                  <div class="h5">CustomThread Inc.</div>
+                                        <p>
+                                            *Lead with a Team (Juniors) what's New and also vice
+                                            versa learning.
+                                        </p>
+
+                                        <p>
+                                            *Create a project architecture (boilerplate/ template/
+                                            stater) in react native using Redux and React Native
+                                            Cli/Expo.
+                                        </p>
+
+                                        <p>
+                                            *Develop different kinds of themes using web stacks in
+                                            CMS
+                                        </p>
+
+                                        <p>
+                                            *Develop a mobile app that can print in PCOS machine
+                                            using Bluetooth
+                                        </p>
+
+                                        <p>
+                                            *Develop a custom component that can re-use using REACT
+                                            and Next JS
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div
+                                    class="col-md-3 bg-primary"
+                                    data-aos="fade-right"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body cc-experience-header">
+                                        <p>February 2017 - Octorber 2018</p>
+                                        <div class="h5">CustomThread Inc.</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-9"
+                                    data-aos="fade-left"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body">
+                                        <div class="h5">Web Developer</div>
+                                        <p>* Create in-house system (Using React JS).</p>
+                                        <p>
+                                            * Create a Website Design and internal system in Web app
+                                            ( fundr.customthread .com, customthread.com ) .
+                                        </p>
+                                        <p>
+                                            * Create Uplift (In house web app) for giving thanks for
+                                            every employee converted into points (Using ReactJS,
+                                            Amazon ,Dynomodb).
+                                        </p>
+                                        <p>
+                                            * Create Order Management tool for in house, how to
+                                            manage a task in every department.
+                                        </p>
+                                        <p>
+                                            * Make a process in every department in operation to
+                                            make more easier and more efficient in task (DevOps)
+                                        </p>
+                                        <p>
+                                            * Fundr Operation Manager in Direct to Garment
+                                            Department (fundr.ph)
+                                        </p>
+                                        <p>* Fundr Technical consultant</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="row">
+                                <div
+                                    class="col-md-3 bg-primary"
+                                    data-aos="fade-right"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body cc-experience-header">
+                                        <p>May 2015 - January 2017</p>
+                                        <div class="h5">
+                                            HIVE - Highly Innovative and Valuable Evolution, Inc.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-9"
+                                    data-aos="fade-left"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body">
+                                        <div class="h5">Programmer and Security Researcher</div>
+                                        <p>
+                                            1. Create and design a Wordpress website from the
+                                            scratch, also Do documentation of usage,
+                                        </p>
+                                        <p>
+                                            2. Create workflow of SAP in Philippine Oncology Center
+                                            Corporation Fairview Center
+                                        </p>
+                                        <p>
+                                            3. Do a marketing research for Social Media and SEO
+                                            Optimization
+                                        </p>
+                                        <p>
+                                            4. Handle's different kinds of server hosting account's.
+                                            (Implementing Security, Maintenance, etc..).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="row">
+                                <div
+                                    class="col-md-3 bg-primary"
+                                    data-aos="fade-right"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body cc-experience-header">
+                                        <p>May 2013 - February 2015</p>
+                                        <div class="h5">Freelance Developer</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-9"
+                                    data-aos="fade-left"
+                                    data-aos-offset="50"
+                                    data-aos-duration="500"
+                                >
+                                    <div class="card-body">
+                                        <div class="h5">Freelance Developer</div>
+                                        <p>*Freelance Developer</p>
+                                        <p>*Find my own Client in different people</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Web Developer</div>
-                  <p>* Create in-house system (Using React JS).</p>
-                  <p>* Create a Website Design and internal system in Web app ( fundr.customthread .com,
-                    customthread.com ) .</p>
-                  <p>* Create Uplift (In house web app) for giving thanks for every employee converted into points
-                    (Using ReactJS, Amazon ,Dynomodb).</p>
-                  <p>* Create Order Management tool for in house, how to manage a task in every department.</p>
-                  <p>* Make a process in every department in operation to make more easier and more efficient in
-                    task
-                    (DevOps)</p>
-                  <p>* Fundr Operation Manager in Direct to Garment Department (fundr.ph)</p>
-                  <p>* Fundr Technical consultant</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-experience-header">
-                  <p>May 2015 - January 2017</p>
-                  <div class="h5">HIVE - Highly Innovative and Valuable Evolution, Inc.</div>
-                </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Programmer and Security Researcher</div>
-                  <p>1. Create and design a Wordpress website from the scratch, also Do documentation of usage,</p>
-                  <p>2. Create workflow of SAP in Philippine Oncology Center Corporation Fairview Center</p>
-                  <p>3. Do a marketing research for Social Media and SEO Optimization</p>
-                  <p>4. Handle's different kinds of server hosting account's. (Implementing Security, Maintenance,
-                    etc..).</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-experience-header">
-                  <p>May 2013 - February 2015</p>
-                  <div class="h5">Freelance Developer</div>
-                </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Freelance Developer</div>
-                  <p>*Freelance Developer </p>
-                  <p>*Find my own Client in different people</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="section">
+                <!-- <div class="section">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Education</div>
     <div class="card">
@@ -565,180 +1076,258 @@
     </div>
   </div>
 </div> -->
-      <div class="section" id="reference">
-        <div class="container cc-reference">
-          <div class="h4 mb-4 text-center title">References</div>
-          <div class="card" data-aos="zoom-in">
-            <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
-                <li data-target="#cc-Indicators" data-slide-to="1"></li>
-                <li data-target="#cc-Indicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-1.jpg"
-                        alt="Image" />
-                      <div class="h5 pt-2">Aiyana</div>
-                      <p class="category">CEO / WEBM</p>
-                    </div>
-                    <div class="col-lg-10 col-md-9">
-                      <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est
-                        porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque
-                        etiam
-                        luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam
-                        ullamcorper,
-                        laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient
-                        fringilla rhoncus eleifend.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-2.jpg"
-                        alt="Image" />
-                      <div class="h5 pt-2">Braiden</div>
-                      <p class="category">CEO / Creativem</p>
-                    </div>
-                    <div class="col-lg-10 col-md-9">
-                      <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est
-                        porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque
-                        etiam
-                        luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam
-                        ullamcorper,
-                        laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient
-                        fringilla rhoncus eleifend.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-3.jpg"
-                        alt="Image" />
-                      <div class="h5 pt-2">Alexander</div>
-                      <p class="category">CEO / Webnote</p>
-                    </div>
-                    <div class="col-lg-10 col-md-9">
-                      <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est
-                        porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque
-                        etiam
-                        luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam
-                        ullamcorper,
-                        laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient
-                        fringilla rhoncus eleifend.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="contact">
-        <div class="cc-contact-information" style="background-image: url('images/staticmap.png');">
-          <div class="container">
-            <div class="cc-contact">
-              <div class="row">
-                <div class="col-md-9">
-                  <div class="card mb-0" data-aos="zoom-in">
-                    <div class="h4 text-center title">Contact Me</div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <form action="https://formspree.io/michaelroevie.victoria@gmail.com" method="POST">
-                            <div class="p pb-3"><strong>Feel free to contact me </strong></div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group"><span class="input-group-addon"><i
-                                      class="fa fa-user-circle"></i></span>
-                                  <input class="form-control" type="text" name="name" placeholder="Name"
-                                    required="required" />
+                <div class="section" id="reference">
+                    <div class="container cc-reference">
+                        <div class="h4 mb-4 text-center title">References</div>
+                        <div class="card" data-aos="zoom-in">
+                            <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li
+                                        class="active"
+                                        data-target="#cc-Indicators"
+                                        data-slide-to="0"
+                                    ></li>
+                                    <li data-target="#cc-Indicators" data-slide-to="1"></li>
+                                    <li data-target="#cc-Indicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 cc-reference-header">
+                                                <img
+                                                    src="images/reference-image-1.jpg"
+                                                    alt="Image"
+                                                />
+                                                <div class="h5 pt-2">Aiyana</div>
+                                                <p class="category">CEO / WEBM</p>
+                                            </div>
+                                            <div class="col-lg-10 col-md-9">
+                                                <p>
+                                                    Habitasse venenatis commodo tempor eleifend arcu
+                                                    sociis sollicitudin ante pulvinar ad, est porta
+                                                    cras erat ullamcorper volutpat metus duis platea
+                                                    convallis, tortor primis ac quisque etiam luctus
+                                                    nisl nullam fames. Ligula purus suscipit tempus
+                                                    nascetur curabitur donec nam ullamcorper,
+                                                    laoreet nullam mauris dui aptent facilisis neque
+                                                    elementum ac, risus semper felis parturient
+                                                    fringilla rhoncus eleifend.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 cc-reference-header">
+                                                <img
+                                                    src="images/reference-image-2.jpg"
+                                                    alt="Image"
+                                                />
+                                                <div class="h5 pt-2">Braiden</div>
+                                                <p class="category">CEO / Creativem</p>
+                                            </div>
+                                            <div class="col-lg-10 col-md-9">
+                                                <p>
+                                                    Habitasse venenatis commodo tempor eleifend arcu
+                                                    sociis sollicitudin ante pulvinar ad, est porta
+                                                    cras erat ullamcorper volutpat metus duis platea
+                                                    convallis, tortor primis ac quisque etiam luctus
+                                                    nisl nullam fames. Ligula purus suscipit tempus
+                                                    nascetur curabitur donec nam ullamcorper,
+                                                    laoreet nullam mauris dui aptent facilisis neque
+                                                    elementum ac, risus semper felis parturient
+                                                    fringilla rhoncus eleifend.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 cc-reference-header">
+                                                <img
+                                                    src="images/reference-image-3.jpg"
+                                                    alt="Image"
+                                                />
+                                                <div class="h5 pt-2">Alexander</div>
+                                                <p class="category">CEO / Webnote</p>
+                                            </div>
+                                            <div class="col-lg-10 col-md-9">
+                                                <p>
+                                                    Habitasse venenatis commodo tempor eleifend arcu
+                                                    sociis sollicitudin ante pulvinar ad, est porta
+                                                    cras erat ullamcorper volutpat metus duis platea
+                                                    convallis, tortor primis ac quisque etiam luctus
+                                                    nisl nullam fames. Ligula purus suscipit tempus
+                                                    nascetur curabitur donec nam ullamcorper,
+                                                    laoreet nullam mauris dui aptent facilisis neque
+                                                    elementum ac, risus semper felis parturient
+                                                    fringilla rhoncus eleifend.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group"><span class="input-group-addon"><i
-                                      class="fa fa-file-text"></i></span>
-                                  <input class="form-control" type="text" name="Subject" placeholder="Subject"
-                                    required="required" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group"><span class="input-group-addon"><i
-                                      class="fa fa-envelope"></i></span>
-                                  <input class="form-control" type="email" name="_replyto" placeholder="E-mail"
-                                    required="required" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="form-group">
-                                  <textarea class="form-control" name="message" placeholder="Your Message"
-                                    required="required"></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col">
-                                <button class="btn btn-primary" type="submit">Send</button>
-                              </div>
-                            </div>
-                          </form>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <p class="mb-0"><strong>Address </strong></p>
-                          <p class="pb-2">Imus Cavite, Philippines</p>
-                          <p class="mb-0"><strong>Phone</strong></p>
-                          <p class="pb-2">+639-35817-8934</p>
-                          <p class="mb-0"><strong>Email</strong></p>
-                          <p>michaelroevie.victoria@gmail.com</p>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="section" id="contact">
+                    <div
+                        class="cc-contact-information"
+                        style="background-image: url('images/staticmap.png')"
+                    >
+                        <div class="container">
+                            <div class="cc-contact">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="card mb-0" data-aos="zoom-in">
+                                            <div class="h4 text-center title">Contact Me</div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <form
+                                                            action="https://formspree.io/michaelroevie.victoria@gmail.com"
+                                                            method="POST"
+                                                        >
+                                                            <div class="p pb-3">
+                                                                <strong
+                                                                    >Feel free to contact me
+                                                                </strong>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-addon"
+                                                                            ><i
+                                                                                class="fa fa-user-circle"
+                                                                            ></i
+                                                                        ></span>
+                                                                        <input
+                                                                            class="form-control"
+                                                                            type="text"
+                                                                            name="name"
+                                                                            placeholder="Name"
+                                                                            required="required"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-addon"
+                                                                            ><i
+                                                                                class="fa fa-file-text"
+                                                                            ></i
+                                                                        ></span>
+                                                                        <input
+                                                                            class="form-control"
+                                                                            type="text"
+                                                                            name="Subject"
+                                                                            placeholder="Subject"
+                                                                            required="required"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-addon"
+                                                                            ><i
+                                                                                class="fa fa-envelope"
+                                                                            ></i
+                                                                        ></span>
+                                                                        <input
+                                                                            class="form-control"
+                                                                            type="email"
+                                                                            name="_replyto"
+                                                                            placeholder="E-mail"
+                                                                            required="required"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <div class="form-group">
+                                                                        <textarea
+                                                                            class="form-control"
+                                                                            name="message"
+                                                                            placeholder="Your Message"
+                                                                            required="required"
+                                                                        ></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <button
+                                                                        class="btn btn-primary"
+                                                                        type="submit"
+                                                                    >
+                                                                        Send
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body">
+                                                        <p class="mb-0">
+                                                            <strong>Address </strong>
+                                                        </p>
+                                                        <p class="pb-2">Imus Cavite, Philippines</p>
+                                                        <p class="mb-0"><strong>Phone</strong></p>
+                                                        <p class="pb-2">+639-35817-8934</p>
+                                                        <p class="mb-0"><strong>Email</strong></p>
+                                                        <p>michaelroevie.victoria@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <div class="container text-center">
-      <a class="cc-facebook btn btn-link" href="https://www.facebook.com/localhost8001"> <i
-          class="fa fa-facebook fa-2x " aria-hidden="true"></i></a>
-      <a class="cc-instagram btn btn-link" href="https://www.instagram.com/mikee.victoria"><i
-          class="fa fa-instagram fa-2x " aria-hidden="true"></i></a>
-    </div>
-    <div class="h4 title text-center">Michael Roevie Victoria</div>
-    <div class="text-center text-muted">
-      <p>&copy; MRVICTORIA. All rights reserved.
-      </p>
-    </div>
-  </footer>
-  <script src="js/core/jquery.3.2.1.min.js"></script>
-  <script src="js/core/popper.min.js"></script>
-  <script src="js/core/bootstrap.min.js"></script>
-  <script src="js/now-ui-kit.js?v=1.1.0"></script>
-  <script src="js/aos.js"></script>
-  <script src="scripts/main.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78705521-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+        <footer class="footer">
+            <div class="container text-center">
+                <a class="cc-facebook btn btn-link" href="https://www.facebook.com/localhost8001">
+                    <i class="fa fa-facebook fa-2x" aria-hidden="true"></i
+                ></a>
+                <a class="cc-instagram btn btn-link" href="https://www.instagram.com/mikee.victoria"
+                    ><i class="fa fa-instagram fa-2x" aria-hidden="true"></i
+                ></a>
+            </div>
+            <div class="h4 title text-center">Michael Roevie Victoria</div>
+            <div class="text-center text-muted">
+                <p>&copy; MRVICTORIA. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="js/core/jquery.3.2.1.min.js"></script>
+        <script src="js/core/popper.min.js"></script>
+        <script src="js/core/bootstrap.min.js"></script>
+        <script src="js/now-ui-kit.js?v=1.1.0"></script>
+        <script src="js/aos.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78705521-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-    gtag('config', 'UA-78705521-3');
-  </script>
-</body>
-
+            gtag("config", "UA-78705521-3");
+        </script>
+    </body>
 </html>
