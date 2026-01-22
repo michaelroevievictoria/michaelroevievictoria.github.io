@@ -1,0 +1,27 @@
+{
+  "name": "michaelroevievictoria.github.io",
+  "version": "1.0.0",
+  "description": "tetetetet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelroevievictoria/michaelroevievictoria.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelroevievictoria/michaelroevievictoria.github.io/issues"
+  },
+  "homepage": "https://github.com/michaelroevievictoria/michaelroevievictoria.github.io#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.6",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
