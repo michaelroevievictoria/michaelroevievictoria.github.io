@@ -2,10 +2,14 @@
 // Don't forget to add it into respective layouts where this js file is needed
 
 $(document).ready(function() {
-  AOS.init( {
+  AOS.init({
     // uncomment below for on-scroll animations to played only once
-    // once: true  
-  }); // initialize animate on scroll library
+    // once: true
+    disable: function () {
+      // Hero is animated by Motion; avoid double-fade on first paint
+      return document.documentElement.classList.contains('site-loading');
+    },
+  });
 });
 
 // Smooth scroll for links with hashes

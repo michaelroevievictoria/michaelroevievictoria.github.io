@@ -1,0 +1,147 @@
+/* Loading screen & Motion UI */
+
+html.site-loading,
+html.site-loading body {
+  overflow: hidden;
+}
+
+html.site-loading body > header,
+html.site-loading body > .page-content,
+html.site-loading body > footer {
+  visibility: hidden;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #1a0a24 0%, #2d0a3d 45%, #4a148c 100%);
+  color: #fff;
+  pointer-events: all;
+}
+
+.site-loader.is-hidden {
+  pointer-events: none;
+}
+
+.site-loader__inner {
+  text-align: center;
+  width: min(320px, 85vw);
+}
+
+.site-loader__brand {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  margin-bottom: 1.75rem;
+}
+
+.site-loader__bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.site-loader__bar-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ce93d8, #fff, #ce93d8);
+  background-size: 200% 100%;
+  transform-origin: left center;
+}
+
+.site-loader__hint {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.hero-motion-target {
+  opacity: 0;
+}
+
+/* Custom cursor (fine pointer only) */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body {
+    cursor: none;
+  }
+
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor .btn,
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select,
+  html.has-custom-cursor label {
+    cursor: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    will-change: transform;
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    background: #fff;
+    mix-blend-mode: difference;
+  }
+
+  .cursor-ring {
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    mix-blend-mode: difference;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-loader__bar-fill {
+    transition: width 0.3s ease;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: auto;
+  }
+
+  .hero-motion-target {
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}

@@ -419,8 +419,12 @@
   border-radius: 3px;
   background: #FFF;
   cursor: default;
-  -webkit-box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
-          box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+  -webkit-box-shadow: inset 0 0 1px #FFF,
+ inset 0 1px 7px #EBEBEB,
+ 0 3px 6px -3px #BBB;
+          box-shadow: inset 0 0 1px #FFF,
+ inset 0 1px 7px #EBEBEB,
+ 0 3px 6px -3px #BBB;
   -webkit-transition: 300ms ease 0s;
   -moz-transition: 300ms ease 0s;
   -ms-transition: 300ms ease 0s;
@@ -7268,4 +7272,345 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0;
+}
+
+/* =========================================
+   Elegant Custom Cursor
+========================================= */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  will-change: transform;
+}
+
+/* Small precise center dot */
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  margin-top: -2.5px;
+
+  background: #ffffff;
+  border-radius: 50%;
+
+  mix-blend-mode: difference;
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    margin 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Elegant outer ring */
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+
+  margin-left: -17px;
+  margin-top: -17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  mix-blend-mode: difference;
+
+  transition:
+    width 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    opacity 0.2s ease;
+}
+
+/* Show custom cursor */
+.has-custom-cursor .cursor-dot,
+.has-custom-cursor .cursor-ring {
+  opacity: 1;
+}
+
+/* Hide browser cursor */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor .btn {
+  cursor: none;
+}
+
+/* Hover state */
+.cursor-ring.is-hovering {
+  width: 48px;
+  height: 48px;
+
+  margin-left: -24px;
+  margin-top: -24px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Clicking */
+.cursor-ring.is-clicking {
+  width: 27px;
+  height: 27px;
+
+  margin-left: -13.5px;
+  margin-top: -13.5px;
+}
+
+/* Hide cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   SPLASH LOADING
+========================================================= */
+
+.site-loader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+/* Background that reacts to loader position */
+
+.splash-background {
+    position: absolute;
+    inset: -15%;
+
+    background:
+        radial-gradient(
+            circle at var(--loader-x, 10%) 50%,
+            rgba(156, 39, 176, 0.65),
+            rgba(90, 30, 130, 0.25) 25%,
+            transparent 55%
+        ),
+        #111;
+
+    transform: scale(1);
+
+    transition:
+        background 0.1s linear,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform, background;
+}
+
+
+/* Content */
+
+.splash-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(580px, 80vw);
+}
+
+
+/* Brand */
+
+.splash-brand {
+    margin-bottom: 28px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.35em;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.splash-brand span {
+    color: #c65bd7;
+}
+
+
+/* Track */
+
+.splash-track {
+    position: relative;
+
+    width: 100%;
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Progress */
+
+.splash-progress {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    will-change: width;
+}
+
+
+/* Moving box */
+
+.splash-box {
+    position: absolute;
+
+    top: 50%;
+    left: 0%;
+
+    width: 13px;
+    height: 13px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+    background: #9c27b0;
+
+    box-shadow:
+        0 0 15px rgba(156, 39, 176, 0.8),
+        0 0 35px rgba(156, 39, 176, 0.3);
+
+    will-change:
+        left,
+        background-color,
+        box-shadow,
+        transform;
+}
+
+
+/* Bottom information */
+
+.splash-meta {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.splash-percent {
+    min-width: 45px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   EXIT ANIMATION
+========================================================= */
+
+.site-loader.is-completing .splash-box {
+    transform:
+        translate(-50%, -50%)
+        rotate(225deg)
+        scale(1.4);
+}
+
+.site-loader.is-completing .splash-background {
+    transform: scale(1.15);
+}
+
+
+/* Entire loader zooms into website */
+
+.site-loader.is-leaving {
+    animation:
+        splashExit 0.9s
+        cubic-bezier(0.76, 0, 0.24, 1)
+        forwards;
+}
+
+
+@keyframes splashExit {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    45% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.25);
+        filter: blur(8px);
+        visibility: hidden;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .splash-content {
+        width: 78vw;
+    }
+
+    .splash-brand {
+        font-size: 11px;
+    }
+
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .site-loader,
+    .splash-background,
+    .splash-box {
+        animation: none !important;
+        transition: none !important;
+    }
+
 }

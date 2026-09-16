@@ -26,9 +26,122 @@
         <link href="css/aos.css" rel="stylesheet" />
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/motion-ui.css" rel="stylesheet" />
+        <style>
+            /* --- Portfolio gallery: consistent sizing, cropping, hover reveal --- */
+            .cc-gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+            @media (max-width: 991px) {
+                .cc-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 575px) {
+                .cc-gallery-grid { grid-template-columns: 1fr; }
+            }
+            .cc-gallery-grid .cc-porfolio-image {
+                margin: 0;
+            }
+            .cc-gallery-grid .cc-porfolio-image figure.cc-effect {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+                border-radius: 10px;
+                margin: 0;
+                background: #eee;
+            }
+            .cc-gallery-grid .cc-porfolio-image figure.cc-effect img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+                display: block;
+                transition: transform .45s ease;
+            }
+            .cc-gallery-grid .cc-porfolio-image:hover figure.cc-effect img {
+                transform: scale(1.08);
+            }
+            .cc-gallery-grid .cc-porfolio-image figcaption {
+                position: absolute;
+                inset: auto 0 0 0;
+                padding: 1rem;
+                background: linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 60%, rgba(0,0,0,0) 100%);
+                color: #fff;
+                transform: translateY(100%);
+                transition: transform .3s ease;
+            }
+            .cc-gallery-grid .cc-porfolio-image:hover figcaption {
+                transform: translateY(0);
+            }
+            .cc-gallery-grid .cc-porfolio-image figcaption .h4 {
+                color: #fff;
+                font-size: 1.05rem;
+                margin-bottom: .15rem;
+            }
+            .cc-gallery-grid .cc-porfolio-image figcaption p {
+                margin: 0;
+                font-size: .85rem;
+                opacity: .85;
+            }
+            .cc-gallery-grid .cc-porfolio-image--wide {
+                grid-column: span 3;
+            }
+            @media (max-width: 991px) {
+                .cc-gallery-grid .cc-porfolio-image--wide { grid-column: span 2; }
+            }
+            @media (max-width: 575px) {
+                .cc-gallery-grid .cc-porfolio-image--wide { grid-column: span 1; }
+            }
+            .cc-gallery-grid .cc-porfolio-image--wide figure.cc-effect {
+                aspect-ratio: 21 / 9;
+            }
+
+            /* --- Skills: categorized groups --- */
+            .cc-skill-category { margin-bottom: 2rem; }
+            .cc-skill-category:last-child { margin-bottom: 0; }
+            .cc-skill-category-title {
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: .85rem;
+                letter-spacing: .08em;
+                color: #9c27b0;
+                border-bottom: 2px solid rgba(156,39,176,.2);
+                padding-bottom: .5rem;
+                margin-bottom: 1rem;
+            }
+        </style>
     </head>
 
     <body id="top">
+<!-- Splash Loading -->
+<div
+    id="site-loader"
+    class="site-loader"
+    role="status"
+    aria-label="Loading portfolio"
+>
+    <div class="splash-background"></div>
+
+    <div class="splash-content">
+        <div class="splash-brand">
+            <span>MR</span>VICTORIA
+        </div>
+
+        <div class="splash-track">
+            <div class="splash-progress"></div>
+            <div class="splash-box"></div>
+        </div>
+
+        <div class="splash-meta">
+            <span>LOADING EXPERIENCE</span>
+            <span class="splash-percent">0%</span>
+        </div>
+    </div>
+</div>
+        <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+        <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
         <header>
             <div class="profile-page sidebar-collapse">
                 <nav
@@ -96,7 +209,7 @@
                                     </div>
                                     <div class="h2 title">Michael Roevie Victoria</div>
                                     <p class="category text-white">
-                                        Web Developer | Mobile Developer | Photographer
+                                        Senior Software Engineer | Team Lead | React &amp; React Native | Photographer
                                     </p>
                                     <a
                                         class="btn btn-primary smooth-scroll mr-2"
@@ -106,7 +219,7 @@
                                         >Hire Me</a
                                     ><a
                                         class="btn btn-primary"
-                                        href="cv/michael_victoria_2025_cv.pdf"
+                                        href="cv/2026_Michael_Victoria.pdf"
                                         data-aos="zoom-in"
                                         data-aos-anchor="data-aos-anchor"
                                         >Download CV</a
@@ -153,18 +266,23 @@
                                     <div class="card-body">
                                         <div class="h4 mt-0 title">About</div>
                                         <p>
-                                            I'm a Web, Mobile Developer and also passionate
-                                            Photographer from Cavite, Philippines. I aim to make a
-                                            difference through my creative solution.
+                                            I'm a Senior Software Engineer and Team Lead with 12+ years
+                                            of experience across web, cross-platform mobile, and
+                                            enterprise applications, based in Cavite, Philippines. I
+                                            specialize in React, React Native, Next.js, and TypeScript,
+                                            building reusable architectures and leading teams through
+                                            production releases for international clients. I'm also a
+                                            passionate photographer, and I aim to make a difference
+                                            through creative, thoughtful solutions in everything I build.
                                         </p>
                                         <p>
-                                            Worked with project teams to create user-friendly and
-                                            appealing application interfaces and mobile app/websites
-                                            for users. Met with project manager, business analyst
-                                            and architect right from beginning of project, creating
-                                            rough mock-ups that were refined and extended over many
-                                            iterations. Adjustments to mock-ups as necessary to
-                                            address problems encountered.
+                                            I currently contribute to an enterprise AI platform, working
+                                            hands-on with AI-assisted engineering tools for code analysis,
+                                            debugging, refactoring, and automation. Over the years I've
+                                            worked closely with project managers, business analysts, and
+                                            architects from day one of a project, turning rough mock-ups
+                                            into polished, production-ready interfaces through many rounds
+                                            of iteration and refinement.
                                             <a href="#" target="_blank">Learn More</a>
                                         </p>
                                     </div>
@@ -176,7 +294,7 @@
                                             <div class="col-sm-4">
                                                 <strong class="text-uppercase">Age:</strong>
                                             </div>
-                                            <div class="col-sm-8">32</div>
+                                            <div class="col-sm-8">33</div>
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-sm-4">
@@ -215,219 +333,341 @@
                         <div class="h4 text-center mb-4 title">Professional Skills</div>
                         <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">HTML5</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 80%"
-                                                ></div>
-                                                <span class="progress-value">80%</span>
+
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">Frontend</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">React</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Next.js</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">CSS3</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 80%"
-                                                ></div>
-                                                <span class="progress-value">80%</span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">TypeScript</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">JavaScript (ES6+)</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">HTML5</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">CSS3 / SASS / SCSS</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Tailwind CSS</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">MUI / Ant Design / Bootstrap</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                                    <span class="progress-value">80%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">JavaScript React / Next JS</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 90%"
-                                                ></div>
-                                                <span class="progress-value">90%</span>
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">Mobile</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">React Native / Expo</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">React Native CLI</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge"
-                                                >JavaScript React Native</span
-                                            >
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 85%"
-                                                ></div>
-                                                <span class="progress-value">85%</span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">iOS &amp; Android Deployment</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">React Navigation</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                                    <span class="progress-value">80%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">SEO</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 85%"
-                                                ></div>
-                                                <span class="progress-value">85%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">SASS</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 75%"
-                                                ></div>
-                                                <span class="progress-value">75 %</span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Victory Native</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">Wordpress</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 85%"
-                                                ></div>
-                                                <span class="progress-value">85%</span>
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">State, Data &amp; APIs</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Redux / React Hooks</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">REST APIs / Axios</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge">Photoshop</span>
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 80%"
-                                                ></div>
-                                                <span class="progress-value">80%</span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Firebase / SQLite</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                
-                              
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge"
-                                                >Amazon Web Services (AWS)</span
-                                            >
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 85%"
-                                                ></div>
-                                                <span class="progress-value">85%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="progress-container progress-primary">
-                                            <span class="progress-badge"
-                                                >FIGMA</span
-                                            >
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar progress-bar-primary"
-                                                    data-aos="progress-full"
-                                                    data-aos-offset="10"
-                                                    data-aos-duration="2000"
-                                                    role="progressbar"
-                                                    aria-valuenow="60"
-                                                    aria-valuemin="0"
-                                                    aria-valuemax="100"
-                                                    style="width: 85%"
-                                                ></div>
-                                                <span class="progress-value">90%</span>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Amazon DynamoDB</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                                    <span class="progress-value">70%</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                               
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">CMS, Cloud &amp; Design Tools</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">WordPress</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Strapi / Headless CMS</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Amazon Web Services (AWS)</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Figma</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Photoshop</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                                    <span class="progress-value">80%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">SEO</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">Testing &amp; Delivery</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Git / GitHub Actions</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                                    <span class="progress-value">90%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Jest / React Testing Library</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Mocha</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                                    <span class="progress-value">70%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Code Review &amp; Release Support</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cc-skill-category">
+                                    <div class="cc-skill-category-title">Security &amp; AI Tools</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Dependabot / npm Security</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">GitHub Copilot / Anthropic Claude</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Prompt Engineering</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                                    <span class="progress-value">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">Python-Assisted Automation</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                    <span class="progress-value">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -467,273 +707,164 @@
                         <div class="tab-content gallery mt-5">
                             <div class="tab-pane active" id="web-development">
                                 <div class="ml-auto mr-auto">
-                                    <div class="row">
+                                    <div class="cc-gallery-grid">
 
-                                      <div class="col-md-12">
-                                        <div
-                                            class="cc-porfolio-image img-raised"
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="top-bottom"
-                                        >
-                                            <a
-                                                href="#"
-                                            >
-                                                <figure class="cc-effect">
-                                                    <img
-                                                        src="images/mychat-store.png"
-                                                        alt="Image"
-                                                    />
-                                                    <figcaption>
-                                                        <div class="h4">myChat - web - store NEXT JS</div>
-                                                        <p>Web Development - Sample View</p>
-                                                    </figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div
-                                            class="cc-porfolio-image img-raised"
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="top-bottom"
-                                        >
-                                            <a
-                                                href="https://mychat.prosperna.com/login"
-                                            >
-                                                <figure class="cc-effect">
-                                                    <img
-                                                        src="images/mychat-web.png"
-                                                        alt="Image"
-                                                    />
-                                                    <figcaption>
-                                                        <div class="h4">myChat - Web - React </div>
-                                                        <p>Web Development</p>
-                                                    </figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
+                                      <div class="cc-porfolio-image cc-porfolio-image--wide img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="#">
+                                              <figure class="cc-effect">
+                                                  <img src="images/mychat-store.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">myChat - Web Store (Next.js)</div>
+                                                      <p>Web Development - Sample View</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
                                       </div>
 
-                                      <div class="col-md-6">
-                                        <div
-                                            class="cc-porfolio-image img-raised"
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="top-bottom"
-                                        >
-                                            <a
-                                                href="https://apps.apple.com/ph/app/mychat-prosperna/id1591033406"
-                                            >
-                                                <figure class="cc-effect">
-                                                    <img
-                                                        src="images/mychat-ios.png"
-                                                        alt="Image"
-                                                    />
-                                                    <figcaption>
-                                                        <div class="h4">myChat- ios - React Native</div>
-                                                        <p>Mobile Development</p>
-                                                    </figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        </div>
-                                      <div class="col-md-6">
-                                        <div
-                                            class="cc-porfolio-image img-raised"
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="top-bottom"
-                                        >
-                                            <a
-                                                href="https://play.google.com/store/apps/details?id=com.prosperna.mychat"
-                                            >
-                                                <figure class="cc-effect">
-                                                    <img
-                                                        src="images/mychat-android.png"
-                                                        alt="Image"
-                                                    />
-                                                    <figcaption>
-                                                        <div class="h4">myChat- android-  React Native</div>
-                                                        <p>Mobile Development</p>
-                                                    </figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                    </div>
-                                      <div class="col-md-6">
-                                        <div
-                                            class="cc-porfolio-image img-raised"
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="top-bottom"
-                                        >
-                                            <a
-                                                href="https://apps.apple.com/us/app/pay-gpwa/id1593835535"
-                                            >
-                                                <figure class="cc-effect">
-                                                    <img
-                                                        src="images/PayGPWA-ios.png"
-                                                        alt="Image"
-                                                    />
-                                                    <figcaption>
-                                                        <div class="h4">PayGPWA- ios - React Native</div>
-                                                        <p>Mobile Development</p>
-                                                    </figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                    </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a
-                                                    href="https://play.google.com/store/apps/details?id=com.xtendly.paygpwa&hl=en_NZ"
-                                                >
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/PayGPWA-android.png"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">PayGPWA- Android - React Native</div>
-                                                            <p>Mobile Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a
-                                                    href="https://play.google.com/store/apps/details?id=com.prosperna.boss&hl=en_NZ"
-                                                >
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/Prosperna-Boss-App.png"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Prosperna BOSS -  React Native</div>
-                                                            <p>Mobile Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a
-                                                    href="https://play.google.com/store/apps/details?id=com.xtendly.prosperna2&hl=en"
-                                                >
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/prosperna_android.png"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Prosperna Android -  React Native</div>
-                                                            <p>Mobile Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#">
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/prosperna_ios.png"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Prosperna iOS -  React Native</div>
-                                                            <p>Mobile Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                      
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="http://hiveonthedot.com/goldwyn">
-                                                    <figure class="cc-effect">
-                                                        <img src="images/Goldwyn.png" alt="Image" />
-                                                        <figcaption>
-                                                            <div class="h4">Goldwyn - Wordpress</div>
-                                                            <p>Web Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://mychat.prosperna.com/login">
+                                              <figure class="cc-effect">
+                                                  <img src="images/mychat-web.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">myChat - Web (React)</div>
+                                                      <p>Web Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
 
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="http://empiredesigns.ph">
-                                                    <figure class="cc-effect">
-                                                        <img src="images/Empire.png" alt="Image" />
-                                                        <figcaption>
-                                                            <div class="h4">Empire- Wordpress</div>
-                                                            <p>Web Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="https://vernverniece.com">
-                                                    <figure class="cc-effect">
-                                                        <img src="images/v<3V.png" alt="Image" />
-                                                        <figcaption>
-                                                            <div class="h4">
-                                                                A Blog of Vern and Verniece Enciso
-                                                            </div>
-                                                            <p>Web Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#web-development">
-                                                    <figure class="cc-effect">
-                                                        <img src="images/apoview.png" alt="Image" />
-                                                        <figcaption>
-                                                            <div class="h4">Apo View Hotel</div>
-                                                            <p>Web Development</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://apps.apple.com/ph/app/mychat-prosperna/id1591033406">
+                                              <figure class="cc-effect">
+                                                  <img src="images/mychat-ios.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">myChat - iOS (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://play.google.com/store/apps/details?id=com.prosperna.mychat">
+                                              <figure class="cc-effect">
+                                                  <img src="images/mychat-android.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">myChat - Android (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://apps.apple.com/us/app/pay-gpwa/id1593835535">
+                                              <figure class="cc-effect">
+                                                  <img src="images/PayGPWA-ios.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">PayGPWA - iOS (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://play.google.com/store/apps/details?id=com.xtendly.paygpwa&hl=en_NZ">
+                                              <figure class="cc-effect">
+                                                  <img src="images/PayGPWA-android.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">PayGPWA - Android (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://play.google.com/store/apps/details?id=com.prosperna.boss&hl=en_NZ">
+                                              <figure class="cc-effect">
+                                                  <img src="images/Prosperna-Boss-App.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Prosperna BOSS (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://play.google.com/store/apps/details?id=com.xtendly.prosperna2&hl=en">
+                                              <figure class="cc-effect">
+                                                  <img src="images/prosperna_android.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Prosperna Android (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="#">
+                                              <figure class="cc-effect">
+                                                  <img src="images/prosperna_ios.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Prosperna iOS (React Native)</div>
+                                                      <p>Mobile Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="http://hiveonthedot.com/goldwyn">
+                                              <figure class="cc-effect">
+                                                  <img src="images/Goldwyn.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Goldwyn (WordPress)</div>
+                                                      <p>Web Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="http://empiredesigns.ph">
+                                              <figure class="cc-effect">
+                                                  <img src="images/Empire.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Empire (WordPress)</div>
+                                                      <p>Web Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="https://vernverniece.com">
+                                              <figure class="cc-effect">
+                                                  <img src="images/v<3V.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">A Blog of Vern and Verniece Enciso</div>
+                                                      <p>Web Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
+                                      <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                          <a href="#web-development">
+                                              <figure class="cc-effect">
+                                                  <img src="images/apoview.png" alt="Image" />
+                                                  <figcaption>
+                                                      <div class="h4">Apo View Hotel</div>
+                                                      <p>Web Development</p>
+                                                  </figcaption>
+                                              </figure>
+                                          </a>
+                                      </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -786,82 +917,50 @@
 
                             <div class="tab-pane" id="Photography" role="tabpanel">
                                 <div class="ml-auto mr-auto">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#Photography">
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/photography-1.jpg"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Photoshoot</div>
-                                                            <p>Photography</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#Photography">
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/photography-3.jpg"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Wedding Photoshoot</div>
-                                                            <p>Photography</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
+                                    <div class="cc-gallery-grid">
+                                        <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                            <a href="#Photography">
+                                                <figure class="cc-effect">
+                                                    <img src="images/photography-1.jpg" alt="Image" />
+                                                    <figcaption>
+                                                        <div class="h4">Photoshoot</div>
+                                                        <p>Photography</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#Photography">
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/photography-2.jpg"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Beach Photoshoot</div>
-                                                            <p>Photography</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="cc-porfolio-image img-raised"
-                                                data-aos="fade-up"
-                                                data-aos-anchor-placement="top-bottom"
-                                            >
-                                                <a href="#Photography">
-                                                    <figure class="cc-effect">
-                                                        <img
-                                                            src="images/photography-4.jpg"
-                                                            alt="Image"
-                                                        />
-                                                        <figcaption>
-                                                            <div class="h4">Nature Photoshoot</div>
-                                                            <p>Photography</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </a>
-                                            </div>
+                                        <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                            <a href="#Photography">
+                                                <figure class="cc-effect">
+                                                    <img src="images/photography-2.jpg" alt="Image" />
+                                                    <figcaption>
+                                                        <div class="h4">Beach Photoshoot</div>
+                                                        <p>Photography</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                            <a href="#Photography">
+                                                <figure class="cc-effect">
+                                                    <img src="images/photography-3.jpg" alt="Image" />
+                                                    <figcaption>
+                                                        <div class="h4">Wedding Photoshoot</div>
+                                                        <p>Photography</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                            <a href="#Photography">
+                                                <figure class="cc-effect">
+                                                    <img src="images/photography-4.jpg" alt="Image" />
+                                                    <figcaption>
+                                                        <div class="h4">Nature Photoshoot</div>
+                                                        <p>Photography</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -879,181 +978,55 @@
                 <div class="section" id="experience">
                     <div class="container cc-experience">
                         <div class="h4 text-center mb-4 title">Work Experience</div>
+
                         <div class="card">
                             <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body cc-experience-header">
+                                        <p>March 2026 - Present</p>
+                                        <div class="h5">KPMG Philippines, Makati</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body">
+                                        <div class="h5">Sr. Consultant</div>
+                                        <p class="category">Working on an enterprise AI platform, developing and enhancing AI-powered applications and internal productivity tools.</p>
+                                        <ul class="pl-3">
+                                            <li>Develop and maintain frontend features using React, TypeScript, and modern web technologies.</li>
+                                            <li>Deliver features, enhancements, and defect fixes across multiple product versions and release cycles.</li>
+                                            <li>Build reusable UI components and help maintain scalable frontend architecture.</li>
+                                            <li>Work with Dependabot and npm security findings, resolving dependency vulnerabilities and compatibility issues.</li>
+                                            <li>Use AI-assisted development tools such as GitHub Copilot and Claude for code analysis, debugging, refactoring, and development workflows.</li>
+                                            <li>Contribute to Python-based automation and engineering scripts, leveraging AI-assisted development where appropriate.</li>
+                                            <li>Collaborate with backend engineers, QA, designers, product owners, and security teams across global teams.</li>
+                                            <li>Provide hands-on support during deployment war rooms, production releases, and post-release hypercare, including troubleshooting and resolving release-critical issues.</li>
+                                            <li>Support multiple releases from development and QA through production deployment and stabilization.</li>
+                                            <li>Participate in code reviews and help maintain code quality, security, and reliability across releases.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body cc-experience-header">
                                         <p>April 2024 - April 2025</p>
-                                        <div class="h5">
-                                            Gold Group Enterprises Inc. - Contractual (US CLIENT
-                                        </div>
+                                        <div class="h5">Gold Group Enterprises, NJ 07712</div>
                                     </div>
                                 </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body">
-                                        <div class="h5">Sr. Mobile Developer (React Native Expo)</div>
-
-                                        <p>
-                                            * Developed a comprehensive cross-platform wellness application for iOS and Android from the ground up using React Native Expo, ensuring a seamless and responsive user experience across devices.
-
-                                        </p>
-
-                                        <p>
-                                            * Led the integration of TryVitals and other third-party applications to facilitate real-time tracking of user vitals, significantly enhancing the app’s functionality and user engagement.
-                                        </p>
-
-                                        <p>
-                                            * Designed and developed reusable components, contributing to faster development cycles and consistent user interfaces across the application.
-                                        </p>
-
-                                        <p>
-                                            * Utilized Victory Native for crafting interactive and visually appealing charts, aiding users in understanding their health trends better.
-                                        </p>
-
-                                        <p>
-                                            * Collaborated effectively with team members on various aspects of the project, ensuring timely delivery and adherence to best practices in mobile development.
-                                        </p>                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body cc-experience-header">
-                                        <p>September 2022 - February 15, 2024</p>
-                                        <div class="h5">
-                                            TechEdge Solutions, Inc.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body">
-                                        <div class="h5">Senior Front End Developer</div>
-
-                                        <p>
-                                            * Specialized in React, Next.js, and React Native, with expertise in React Hooks, custom components, Redux, and other state management tools.
-                                        </p>
-
-                                        <p>
-                                            * Successfully deployed applications on both Android and iOS platforms, demonstrating proficiency in cross-platform development and deployment.
-                                        </p>
-
-                                        <p>
-                                            * Led end-to-end web development projects, ensuring the delivery of high-quality, high- performance, and user-friendly applications.
-                                        </p>
-
-                                        <p>
-                                            * Mentored junior developers, enhancing team productivity and skill levels through coaching and guidance.
-                                        </p>
-
-                                        <p>
-                                            * Collaborated effectively with cross-functional teams, translating design concepts into responsive web applications.
-                                        </p>
-
-                                        <p>
-                                            * Created multiple landing pages with intricate animations, consistently meeting tight project timelines.
-                                        </p>
-                                        <p>
-                                            * Developed custom boilerplate templates to streamline project initiation and maintain consistency.
-                                        </p>
-                                        <p>
-                                            * Enforced standardized coding practices to improve code quality and team efficiency. Utilized a diverse tech stack including Headless CMS, Tailwind CSS, Next.js, TypeScript, MUI, AntD, and other frameworks for various web applications.
-                                        </p>
-                                        <p>
-                                            * Landing Page for a known Governor: Simple SPA site for an informative website. Technologies used: Next.js, React hooks, HTML, CSS, SCSS, Tailwind CSS, headless UI, TypeScript, REST API integration, Strapi integration, and mobile responsiveness.
-                                        </p>
-                                        <p>
-                                            * Landing page for a health website: Informative site. Technologies used: Next.js, React hooks, HTML, CSS, SCSS, Tailwind CSS, animate CSS, headless UI, TypeScript, REST API integration, Strapi integration, and mobile responsiveness.
-                                        </p>
-                                        <p>
-                                            * Web app focused on Health: A web app combining LinkedIn and Upwork, focused on the healthcare field. Technologies used: Next.js, React hooks, HTML, CSS, SCSS, Tailwind CSS, headless UI, TypeScript, REST API integration, Getstream, and mobile responsiveness.
-                                        </p>
-                                        <p>
-                                            * Super app for fans and artists: An app featuring a community for fans and artists, with ticketing system for concerts and an e-commerce section for artists' merchandise. Technologies used: React Native CLI, Native Base, REST API (Axios), React Navigation, Firebase FCM, Redux, and Stripe integration.
-                                        </p>
-                                        <p>
-                                            * Barangay KAP (Super Admin dashboard): Dashboard handling data from all barangays in the Philippines, including case types, incidents, announcements, dashboard, barangay management, account management, and role management. Technologies used: Next.js, MUI, HTML, CSS, SCSS, REST API, Flexbox, Redux, and mobile responsiveness.
-                                        </p>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body cc-experience-header">
-                                        <p>November 2018 - August 30, 2022</p>
-                                        <div class="h5">
-                                            Xtendly Philippines Inc. / Prosperna Inc.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body">
-                                        <div class="h5">Sr. React Native Developer</div>
-
-                                        <p>
-                                            *Develop an Android and IOS application applicable in
-                                            all devices.
-                                        </p>
-
-                                        <p>
-                                            *Lead with a Team (Juniors) what's New and also vice
-                                            versa learning.
-                                        </p>
-
-                                        <p>
-                                            *Create a project architecture (boilerplate/ template/
-                                            stater) in react native using Redux and React Native
-                                            Cli/Expo.
-                                        </p>
-
-                                        <p>
-                                            *Develop different kinds of themes using web stacks in
-                                            CMS
-                                        </p>
-
-                                        <p>
-                                            *Develop a mobile app that can print in POS machine
-                                            using Bluetooth
-                                        </p>
-
-                                        <p>
-                                            *Develop a custom component that can re-use using REACT
-                                            and Next JS
-                                        </p>
+                                        <div class="h5">Software Engineer - Mobile Developer</div>
+                                        <ul class="pl-3">
+                                            <li>Developed a comprehensive cross-platform wellness application for iOS and Android using React Native and Expo, delivering a responsive and consistent user experience across devices.</li>
+                                            <li>Led the integration of TryVitals and third-party health services to enable real-time tracking and visualization of user health and vital data.</li>
+                                            <li>Designed and implemented a SQLite-based local data layer for importing, storing, and managing health metrics efficiently, supporting application performance and scalability.</li>
+                                            <li>Built reusable and modular React Native components, improving development efficiency, maintainability, and UI consistency throughout the application.</li>
+                                            <li>Developed interactive health-data visualizations using Victory Native, enabling users to better understand and monitor their health trends.</li>
+                                            <li>Collaborated closely with developers and cross-functional team members throughout the development lifecycle, contributing to feature implementation, integration, testing, troubleshooting, and production-ready delivery while following mobile development best practices.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1061,114 +1034,132 @@
 
                         <div class="card">
                             <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body cc-experience-header">
-                                        <p>February 2017 - Octorber 2018</p>
-                                        <div class="h5">CustomThread Inc.</div>
+                                        <p>September 2024 - March 2025</p>
+                                        <div class="h5">Healthy Kitchen, United States</div>
                                     </div>
                                 </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body">
+                                        <div class="h5">Team Lead Software Developer</div>
+                                        <p class="category">Worked with PLANNED LLC for almost 7 months, helping build and push the product toward MVP within an aggressive 2-month initial delivery target.</p>
+                                        <ul class="pl-3">
+                                            <li>Worked on the Admin Panel and public-facing Landing Page, implementing new modules, enhancements, and product features.</li>
+                                            <li>Helped form and collaborate with a small delivery team composed of a Backend Developer and Mobile Developer to accelerate MVP development.</li>
+                                            <li>Contributed to the mobile application, including bug fixing, feature enhancements, module integration, and production issue resolution.</li>
+                                            <li>Worked closely across frontend, backend, and mobile development to ensure features were integrated and delivered smoothly.</li>
+                                            <li>Supported ongoing product improvements, bug fixes, and feature requests after the initial MVP delivery.</li>
+                                            <li>Currently remain available on an on-call / as-needed basis for technical support, maintenance, enhancements, and new feature development.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body cc-experience-header">
+                                        <p>September 2022 - February 2024</p>
+                                        <div class="h5">TechEdge Solutions, Inc., Makati Philippines</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body">
+                                        <div class="h5">Sr. Front End Developer</div>
+                                        <ul class="pl-3">
+                                            <li>Specialized in React, Next.js, and React Native, with expertise in React Hooks, custom components, Redux, and other state management tools.</li>
+                                            <li>Successfully deployed applications on both Android and iOS platforms, demonstrating proficiency in cross-platform development and deployment.</li>
+                                            <li>Led end-to-end web development projects, ensuring the delivery of high-quality, high-performance, and user-friendly applications.</li>
+                                            <li>Mentored junior developers, enhancing team productivity and skill levels through coaching and guidance.</li>
+                                            <li>Collaborated effectively with cross-functional teams, translating design concepts into responsive web applications.</li>
+                                            <li>Created multiple landing pages with intricate animations, consistently meeting tight project timelines.</li>
+                                            <li>Developed custom boilerplate templates to streamline project initiation and maintain consistency.</li>
+                                            <li>Enforced standardized coding practices to improve code quality and team efficiency. Utilized a diverse tech stack including Headless CMS, Tailwind CSS, Next.js, TypeScript, MUI, AntD, and other frameworks for various web applications.</li>
+                                            <li>Landing Page for a known Governor: simple SPA site for an informative website.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body cc-experience-header">
+                                        <p>April 2018 - August 2022</p>
+                                        <div class="h5">Prosperna, Philippines</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body">
+                                        <div class="h5">Sr. Mobile and Web Developer</div>
+                                        <ul class="pl-3">
+                                            <li>Led cross-functional teams of junior developers, fostering knowledge sharing and professional growth.</li>
+                                            <li>Developed cross-platform Android and iOS applications compatible with various devices.</li>
+                                            <li>Created a project architecture template in React Native, incorporating Redux and React Native CLI/Expo for efficient development.</li>
+                                            <li>Designed and implemented different themes for content management systems using web stacks.</li>
+                                            <li>Developed a mobile app capable of printing on POS machines via Bluetooth connectivity.</li>
+                                            <li>Designed and built reusable custom components using React and Next.js for enhanced code maintainability and productivity.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="card-body cc-experience-header">
+                                        <p>February 2017 - October 2018</p>
+                                        <div class="h5">CustomThread Inc., Philippines</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body">
                                         <div class="h5">Web Developer</div>
-                                        <p>* Create in-house system (Using React JS).</p>
-                                        <p>
-                                            * Create a Website Design and internal system in Web app
-                                            ( fundr.customthread .com, customthread.com ) .
-                                        </p>
-                                        <p>
-                                            * Create Uplift (In house web app) for giving thanks for
-                                            every employee converted into points (Using ReactJS,
-                                            Amazon ,Dynomodb).
-                                        </p>
-                                        <p>
-                                            * Create Order Management tool for in house, how to
-                                            manage a task in every department.
-                                        </p>
-                                        <p>
-                                            * Make a process in every department in operation to
-                                            make more easier and more efficient in task (DevOps)
-                                        </p>
-                                        <p>
-                                            * Fundr Operation Manager in Direct to Garment
-                                            Department (fundr.ph)
-                                        </p>
-                                        <p>* Fundr Technical consultant</p>
+                                        <ul class="pl-3">
+                                            <li>Designed and developed internal web systems and customer-facing web experiences for CustomThread and Fundr.</li>
+                                            <li>Built Uplift, an internal employee recognition platform that allowed employees to give peer recognition that could be converted into points, using React.js and Amazon DynamoDB.</li>
+                                            <li>Developed an internal Order Management System to organize, assign, and track tasks across multiple departments, helping streamline day-to-day operational workflows.</li>
+                                            <li>Worked closely with different departments to analyze existing processes and translate operational requirements into technical solutions, improving workflow efficiency and reducing manual processes.</li>
+                                            <li>Took on an operations management role within Fundr's Direct-to-Garment department, combining technical expertise with hands-on understanding of production and operational workflows.</li>
+                                            <li>Led end-to-end web development, from requirements and UI implementation through integration, testing, and delivery, with a focus on performance, usability, and maintainability.</li>
+                                            <li>Collaborated with cross-functional teams to translate designs and business requirements into responsive web applications and landing pages, including interfaces with custom animations.</li>
+                                            <li>Developed reusable components and boilerplate templates to accelerate project setup, promote consistency, and improve maintainability across applications.</li>
+                                            <li>Established and promoted standardized coding practices, improving code consistency and development workflows across projects.</li>
+                                            <li>Worked with React.js, Redux, Amazon DynamoDB, Bootstrap, Material UI (MUI), Ant Design (AntD), and other frontend technologies across internal and customer-facing applications.</li>
+                                            <li>Served as a Technical Consultant for Fundr, providing technical guidance and helping bridge software development requirements with operational and business needs.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body cc-experience-header">
-                                        <p>May 2015 - January 2017</p>
-                                        <div class="h5">
-                                            HIVE - Highly Innovative and Valuable Evolution, Inc.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
-                                    <div class="card-body">
-                                        <div class="h5">Programmer and Security Researcher</div>
-                                        <p>* Designed and built a WordPress website from the ground up, complete with comprehensive documentation for user guidance.</p>
-                                        <p>* Established an efficient workflow for SAP at the Philippine Oncology Center Corporation Fairview Center, optimizing processes and enhancing productivity.</p>
-                                        <p>* Conducted in-depth marketing research to inform strategies for Social Media and SEO optimization, resulting in improved online visibility and engagement.</p>
-                                        <p>* Successfully managed multiple server hosting accounts, proactively implementing robust security measures and performing regular maintenance tasks to ensure uninterrupted operations.</p>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card">
                             <div class="row">
-                                <div
-                                    class="col-md-3 bg-primary"
-                                    data-aos="fade-right"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body cc-experience-header">
-                                        <p>May 2013 - February 2015</p>
-                                        <div class="h5">Freelance Developer</div>
+                                        <p>February 2017 - October 2018</p>
+                                        <div class="h5">HIVE Inc, Philippines</div>
                                     </div>
                                 </div>
-                                <div
-                                    class="col-md-9"
-                                    data-aos="fade-left"
-                                    data-aos-offset="50"
-                                    data-aos-duration="500"
-                                >
+                                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                                     <div class="card-body">
-                                        <div class="h5">Freelance Developer</div>
-                                        <p>*Freelance Developer</p>
-                                        <p>* Designed and built a WordPress website from the ground up, complete with comprehensive documentation for user guidance.</p>
-                                        <p>* Established an efficient workflow for SAP at the Philippine Oncology Center Corporation Fairview Center, optimizing processes and enhancing productivity.</p>
-                                        <p>* Conducted in-depth marketing research to inform strategies for Social Media and SEO optimization, resulting in improved online visibility and engagement.</p>
-                                        <p>* Successfully managed multiple server hosting accounts, proactively implementing robust security measures and performing regular maintenance tasks to ensure uninterrupted operations.</p>
+                                        <div class="h5">Web Developer and Security Researcher</div>
+                                        <ul class="pl-3">
+                                            <li>Designed and developed a WordPress website from the ground up, including comprehensive technical and user documentation to support ongoing administration and maintenance.</li>
+                                            <li>Established and improved SAP-related operational workflows for the Philippine Oncology Center Corporation – Fairview Center, helping streamline processes and improve day-to-day operational efficiency.</li>
+                                            <li>Conducted market and digital research to support social media and Search Engine Optimization (SEO) strategies, contributing to improved online presence and audience engagement.</li>
+                                            <li>Managed multiple web hosting and server environments, performing regular administration, maintenance, monitoring, troubleshooting, and security-related activities to support system availability and reliability.</li>
+                                            <li>Implemented proactive security measures and server maintenance practices to reduce operational risks and help maintain stable, uninterrupted services.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <!-- <div class="section">
@@ -1469,6 +1460,32 @@
         <script src="js/now-ui-kit.js?v=1.1.0"></script>
         <script src="js/aos.js"></script>
         <script src="scripts/main.js"></script>
+
+        <script type="module">
+
+        import {
+
+            animate,
+
+            stagger,
+
+            spring
+
+        } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        window.Motion = {
+
+            animate,
+
+            stagger,
+
+            spring
+
+        };
+
+        import("./scripts/motion-ui.js");
+
+        </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78705521-3"></script>
         <script>
